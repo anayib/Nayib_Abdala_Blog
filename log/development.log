@@ -1,0 +1,77 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-22 23:29:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (52.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingPageController#landing as HTML
+  [1m[35mStrategy Load (67.4ms)[0m  SELECT  "strategies".* FROM "strategies"   ORDER BY created_at DESC LIMIT 20
+  [1m[36mAuthor Load (79.8ms)[0m  [1mSELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1[0m  [["strategy_id", 11]]
+  [1m[35mAuthor Load (0.9ms)[0m  SELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1  [["strategy_id", 10]]
+  Rendered landing_page/_strategies_landing_show.html.erb (329.6ms)
+  Rendered landing_page/landing.html.erb within layouts/landing (338.7ms)
+  Rendered layouts/_landing_nav.html.erb (6.9ms)
+Completed 200 OK in 6217ms (Views: 5743.3ms | ActiveRecord: 244.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-22 23:29:39 -0500
+Processing by LandingPageController#landing as HTML
+  [1m[36mStrategy Load (0.6ms)[0m  [1mSELECT  "strategies".* FROM "strategies"   ORDER BY created_at DESC LIMIT 20[0m
+  [1m[35mAuthor Load (0.7ms)[0m  SELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1  [["strategy_id", 11]]
+  [1m[36mAuthor Load (0.7ms)[0m  [1mSELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1[0m  [["strategy_id", 10]]
+  Rendered landing_page/_strategies_landing_show.html.erb (15.0ms)
+  Rendered landing_page/landing.html.erb within layouts/landing (17.3ms)
+  Rendered layouts/_landing_nav.html.erb (1.4ms)
+Completed 200 OK in 296ms (Views: 292.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/strategies?utf8=%E2%9C%93&keyword=crecer&commit=buscar" for 127.0.0.1 at 2015-04-22 23:29:46 -0500
+Processing by StrategiesController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"crecer", "commit"=>"buscar"}
+  [1m[35mAuthor Load (25.1ms)[0m  SELECT "authors".* FROM "authors"  WHERE "authors"."id" IN (1)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors"  WHERE "authors"."id" IN (1)[0m
+  Rendered strategies/index.html.erb within layouts/application (114.9ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 897ms (Views: 419.9ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-22 23:30:00 -0500
+Processing by LandingPageController#landing as HTML
+  [1m[35mStrategy Load (0.6ms)[0m  SELECT  "strategies".* FROM "strategies"   ORDER BY created_at DESC LIMIT 20
+  [1m[36mAuthor Load (0.6ms)[0m  [1mSELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1[0m  [["strategy_id", 11]]
+  [1m[35mAuthor Load (0.7ms)[0m  SELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1  [["strategy_id", 10]]
+  Rendered landing_page/_strategies_landing_show.html.erb (13.3ms)
+  Rendered landing_page/landing.html.erb within layouts/landing (15.8ms)
+  Rendered layouts/_landing_nav.html.erb (1.8ms)
+Completed 200 OK in 272ms (Views: 268.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-22 23:30:46 -0500
+Processing by LandingPageController#landing as HTML
+  [1m[36mStrategy Load (0.6ms)[0m  [1mSELECT  "strategies".* FROM "strategies"   ORDER BY created_at DESC LIMIT 20[0m
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1  [["strategy_id", 11]]
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1[0m  [["strategy_id", 10]]
+  Rendered landing_page/_strategies_landing_show.html.erb (12.6ms)
+  Rendered landing_page/landing.html.erb within layouts/landing (34.4ms)
+  Rendered layouts/_landing_nav.html.erb (0.7ms)
+Completed 200 OK in 306ms (Views: 302.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-22 23:43:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingPageController#landing as HTML
+  [1m[35mStrategy Load (1.4ms)[0m  SELECT  "strategies".* FROM "strategies"   ORDER BY created_at DESC LIMIT 20
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1[0m  [["strategy_id", 11]]
+  [1m[35mAuthor Load (0.9ms)[0m  SELECT "authors".* FROM "authors" INNER JOIN "authors_strategies" ON "authors"."id" = "authors_strategies"."author_id" WHERE "authors_strategies"."strategy_id" = $1  [["strategy_id", 10]]
+  Rendered landing_page/_strategies_landing_show.html.erb (288.0ms)
+  Rendered landing_page/landing.html.erb within layouts/landing (351.0ms)
+  Rendered layouts/_landing_nav.html.erb (6.2ms)
+Completed 200 OK in 2027ms (Views: 1756.7ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/strategies?utf8=%E2%9C%93&keyword=crecer&commit=buscar" for 127.0.0.1 at 2015-04-22 23:43:49 -0500
+Processing by StrategiesController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"crecer", "commit"=>"buscar"}
+  [1m[36mAuthor Load (0.8ms)[0m  [1mSELECT "authors".* FROM "authors"  WHERE "authors"."id" IN (1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors"  WHERE "authors"."id" IN (1)
+  Rendered strategies/index.html.erb within layouts/application (88.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 823ms (Views: 417.5ms | ActiveRecord: 0.8ms)

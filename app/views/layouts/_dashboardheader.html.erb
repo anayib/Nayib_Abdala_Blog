@@ -1,0 +1,46 @@
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Innovation Lessons Panel", strategies_path, class: "navbar-brand active" %>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+              <li ><%= link_to "Strategies", strategies_path, class: "active"%></li>
+              <li><%= link_to "Authors", authors_path %></li>
+              <li><%= link_to "Categories", categories_path %></li>
+              <% if  user_signed_in? %>
+                 <li><%= link_to "log out", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-off" %></li>
+                <% else %>
+                <li><%= link_to"iniciar sesión", new_user_session_path%></li>
+              <% end %>
+
+          </ul>
+
+
+                <div class="input-group" style="margin-top: 9px; width:45%" >
+                  <%= form_tag(strategies_path, :method => "get", id: "search-form", class: "input-group-btn") do %>
+                    <div class="input-group">
+                      <%= text_field_tag :keyword, params[:keyword], autofocus: true, placeholder: "buscar...", class: "form-control" %> <span class="input-group-btn">
+                      <%= submit_tag("buscar", class: "btn btn-default") %>
+                      </span>
+
+                    </div>
+
+                  <% end %>
+                </div>
+
+
+        </div>
+      </div>
+    </nav>

@@ -1,0 +1,28 @@
+<% @strategiesOrdered.each do |strategy| %>
+  <div class=row style=  "margin: 60px; text-align: left;">
+    <div class="col-md-9" style:>
+        <%= link_to strategy.title, strategy, class: "title_Index"%>
+
+        <% if strategy.servicetype === "Gratuita" %>
+            <h6 style="color: #7f8c8d"><%=strategy.servicetype%></h6>
+          <% elsif strategy.servicetype === "Miembros" %>
+            <h6 style="color: #2980b9"><%=strategy.servicetype%></h6>
+          <% elsif strategy.servicetype === "SuscriptoresPro" %>
+            <h6 style="color:green"><%=strategy.servicetype%></h6>
+        <% end %>
+        <p> <small> <em> <%= truncate_html(strategy.intro , length: 250)%></small></em></p>
+
+
+        <!--<%#=truncate(strategy.intro.html_safe, length: 2000)%></small></em></p> -->
+        <%= link_to"leer estrategia", strategy, class: "btn btn-info btn-small", style: "color:white"%>
+    </div> <br><br>
+    <div class="col-md-3">
+        <% strategy.authors.each do |author| %>
+          <%= image_tag author.image.url(:thumb), size: "100x100", style: "border-radius: 50%; disp;" %>
+          <div>
+            <p>vía - <%= author.name %> - </p>
+          </div>
+        <% end -%>
+    </div>
+  </div> <hr>
+<% end %>

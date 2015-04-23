@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <h1>¿de que quieres aprender hoy?</h1>
+  <% if user_signed_in? && current_user.admin?%>
+    <%= link_to 'Create new strategy', new_strategy_path, style:"float:right; color:white",class: "btn btn-success" %>
+  <% end %>
+
+</div>
+
+
+
+<% @strategies.each do |strategy| %>
+  <div class=row style=  "margin: 60px; text-align: left;">
+    <div class="col-sm-6 col-md-10" style:>
+        <%= link_to highlighted_title(strategy), strategy_path(strategy.id), class: "title_Index"%>
+        <% if strategy.servicetype === "Gratuita" %>
+            <h6 style="color: #7f8c8d"><%=strategy.servicetype%></h6>
+          <% elsif strategy.servicetype === "Miembros" %>
+            <h6 style="color: #2980b9"><%=strategy.servicetype%></h6>
+          <% elsif strategy.servicetype === "SuscriptoresPro" %>
+            <h6 style="color:green"><%=strategy.servicetype%></h6>
+        <% end %>
+        <div class="line-height-custom-index">
+          <small><em><%= highlighted_intro(strategy) %></small></em>
+        </div>
+
+        <%= link_to "leer estrategia", strategy_path(strategy.id), class: "btn btn-info btn-small", style: "color:white"%>
+        <% if user_signed_in? && current_user.admin?%>
+          <%= link_to "show", strategy_path(strategy.id), class: "btn btn-default btn-small"%>
+        <% end %>
+        <% if user_signed_in? && current_user.admin?%>
+          <%= link_to "edit", edit_strategy_path(strategy.id), class: "btn btn-default btn-small"%>
+          <%= link_to "destroy", strategy_path(strategy.id), method: :delete, data: { confirm: 'Are you sure?, if you click ok you will erase this strategy from the data base' }, class: "btn btn-default btn-small"%>
+         <% end %>
+    </div>
+    <div class="col-sm-6 col-md-2">
+        <% Author.where(id: strategy.authors.map(&:id)).each do |author| %>
+          <%= image_tag author.image.url(:thumb), size: "100x100", style: "border-radius: 50%; disp;" %>
+          <div>
+            <p>vía - <%= author.name %> - </p>
+          </div>
+        <% end -%>
+    </div>
+  </div>
+<% end %>
+
+<br>
+
+
+
+

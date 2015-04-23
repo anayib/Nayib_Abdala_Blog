@@ -1,0 +1,7 @@
+<p> Bienvenido: <%= @name %>!</p>
+
+<p>Por favor confirma la creación de tu ceunta en Innovation Lessons dando click en el sigiente enlace</p>
+
+<!-- <p>You can confirm your account email through the link below:</p> -->
+
+<p><%= link_to 'confirmar mi cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>

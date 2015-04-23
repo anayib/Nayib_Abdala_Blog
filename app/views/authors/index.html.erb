@@ -1,0 +1,32 @@
+<%= link_to 'Create new author', new_author_path, style:"float:right",class:"btn btn-success" %>
+<h1>Listing authors</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= image_tag author.image.url(:thumb),  size: "100x100", style: "border-radius: 50%" %></td>
+        <td><%= author.name %></td>
+        <td><%= author.bio.html_safe%></td>
+        <td><%= author.date %></td>
+        <td><%= link_to 'Show', author %></td>
+        <td><%= link_to 'Edit', edit_author_path(author) %></td>
+        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?, if you click ok you will erase this author from the data base' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

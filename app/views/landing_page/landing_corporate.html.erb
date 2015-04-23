@@ -1,0 +1,114 @@
+
+<div class="container col-xs-12 col-md-12" id="container-total">
+  <div class="container" id="containerPrimario" >
+    <div class="row" id="row1">
+      <div class=" col-md-2"></div>
+        <div class="col-xs-12   col-md-8 " >
+          <div class="colCentral" style="background: rgba(0,0,0,.85); border-radius: 18px;margin:auto;padding: 50px;">
+            <h1 style="font-size:30px;"><stong>Toma decisiones de negocio acertadas</strong></h1>
+             <hr>
+            <p style="font-size:15px; line-height: 30px">teniendo como refrencia los resúmenes cortos  de las estrategias que aplican empresarios y profesionales exitosos</p>
+            <div>
+
+
+              <%= form_tag(strategies_path, :method => "get", id: "search-form") do %>
+              <div class="input-group">
+                    <%= text_field_tag :keyword, params[:keyword], autofocus: true, placeholder: "escribe palabras relacionadas con lo que quieres aprender", class: "form-control"%>
+                    <span class="input-group-btn">
+                    <%= submit_tag("buscar", class: "btn btn-primary") %>
+                    </span>
+              </div>
+              <% end %>
+            </div>
+          </div> <!--termina div colcentral -->
+        </div> <!-- div col8 finaliza -->
+        <div class="col-md-2"></div>
+      </div>
+    </div><!--termina el row1-->
+  </div><!--termina container primario-->
+</div><br><br>
+
+<div class="container col-xs-12 col-md-12">
+
+<%= render "strategies_landing_show" %>
+
+</div>
+
+<div id="ourApproach" style="background-color:#F7F7F7" class="col-xs-12 col-md-12">
+  <div class="container" id="secondContainer" >
+      <div class="row" style="padding: 20px">
+        <h3>Actualiza a tus empleados de forma rápida y especializada con las estrategias más efectivas para:</h3><hr>
+          <div class="col-sm-6 embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/qegz74-0vzY" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class=row id="contentdescription">
+              <div class="col-sm-6">
+                <ul>
+                  <h5><span class="icon-include"></span>Identificar oportunidades de innovación</h5  >
+                  <h5><span class="icon-include"></span>Generar y validar modelos de negocio</h5>
+                  <h5><span class="icon-include"></span>Implementar investigaciones de usuario</h5>
+                  <h5><span class="icon-include"></span>Integrar metodologías ágiles de desarrollo de producto y de mercado</h5>
+                  <h5><span class="icon-include"></span>Aumentar las ventas y hacer crecer tu negocio</h5>
+                  <h5><span class="icon-include"></span>Validar y desarrollar nuevos negocios</h5>
+                  <h5><span class="icon-include"></span>Resolver problemas de negocio a través de herrmaientas de innovación </h5>
+                  <h5><span class="icon-include"></span>Perfilar clientes para el desarrollo de nuevos negocios y optimizar los existentes</h5>
+                  <h5><span class="icon-include"></span>Crear y validar propuestas de valor que atienden necesidades reales </h5>
+                  <h5><span class="icon-include"></span>Implementar estrategias de mercadeo efectivas para adquirir, retener y crecer clientes</h5>
+                </ul>
+              </div>
+          </div><!--contentdescription 1-->
+      </div>
+  </div>
+</div>
+<!-- </div> <! --> <!-- finaliza container video -->
+
+
+
+
+<div class="col-xs-12  col-md-12 ">
+  <div class="#" id="#">
+    <div class="container-fluid" id="#">
+      <div class=row>
+        <div class="col-xs-12" style="text-align:center" >
+           <h3>Incrementa la productividad de tus empleados con  la toma de decisiones de manera inteligente</h3> <br>
+           <p>brindándoles el conocimeinto práctico, especializado y actual que los profesionales y emprendedores más competentes en negocios usan para atender las necesidades de la industria</p>
+        </div>
+      </div><!--finaliza row1-->
+  <!--inicia ultimo container para signup o signin -->
+    </div>
+    <div class="callToAction">
+        <div class="container">
+         <div class="row">
+          <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <%= link_to"programar una llamada", landing_page_contact_path, remote: true, class: "btn btn-success btn-lg", style: "color:white; margin-top: 30px; margin-bottom: 30px;" %>
+            </div>
+          </div>
+           <div class="col-sm-2"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12  col-md-12 ">
+  <footer style=  "margin-top:40px">
+        <div class="container">
+          <div class="row" >
+            <div class="col-xs-12 col-md-6">
+            <%= link_to "política de privacidad y términos de servicio", landing_page_privacyandterms_path, style: "color:#bdc3c7", id: "link_pago"  %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <p><small style="color:#bdc3c7">Copyright &copy; 2015 Innovation Lessons</small> </p>
+            </div>
+            <!-- <div class="col-sm-6 col-md-4">
+                <p><a href="#">Twitter</a><span>
+                <a href="#">LinkedIn</a>
+            </div><!end col-sm-3 -->
+          </div> <!-- end row -->
+  </footer>
+</div>
+
+
+
+
+

@@ -1,0 +1,49 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color: #72c02c">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <% if user_signed_in? %>
+            <%=link_to "Innovation Lessons", strategies_path , class: "navbar-brand", style: "color:#72c02c" %>
+          <% else %>
+            <%=link_to "Innovation Lessons", root_path , class: "navbar-brand", style: "color:#72c02c" %>
+          <%end%>
+        </div> <!-- nav-header -->
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% unless user_signed_in? %>
+              <li><%= link_to"Para Empresas", landing_page_enterprise_path, id: "text-nav-bar"%></li>
+              <li><%= link_to"Iniciar Sesión", new_user_session_path, id: "text-nav-bar"%></li>
+              <li><%= link_to"Suscribirme", new_user_registration_path, id: "text-nav-bar" %></li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <%#= link_to,'#', current_user.name,  %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Mi cuenta <strong class="caret"></strong></a>
+
+                <ul class="dropdown-menu">
+                <!--<li>
+                  <a href="#"><span class="glyphicon glyphicon-wrench"></span> Configuración</a>
+                </li> -->
+
+                  <li><%= link_to " actualizar perfil", edit_user_registration_path, class: "glyphicon glyphicon-refresh"  %></li>
+
+                  <li class="divider"></li>
+
+                  <li><%= link_to " cerrar sesión", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-off" %></li>
+
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+
+        </div> <!-- #id=navbar -->
+      </div><!-- container-fluid -->
+    </nav><!-- nav -->
+
+

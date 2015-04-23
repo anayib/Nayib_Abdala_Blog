@@ -1,0 +1,13 @@
+<fieldset class="panel panel-success" style="text-align:left">
+<div class="panel-heading">
+  <div class="panel-body" >
+  <%=t.label :tip_title, "title" %>
+  <%=t.text_field :tip_title, style: "width: 100%"%>
+  <%=t.label :content, "content" %>
+  <%=t.cktext_area :content, class: 'js-update-editor'  %>
+  <%=t.hidden_field :_destroy %>
+  <%= link_to "remove tip"  , "#", class: "remove_fields" %>
+  </div>
+</div>
+</fieldset>
+

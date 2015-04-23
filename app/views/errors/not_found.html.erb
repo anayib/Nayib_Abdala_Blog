@@ -1,0 +1,14 @@
+<br><br><br>
+<div class="container">
+  <div class="well">
+    <h2>Parece que no hemos encontrado lo que buscabas. Intenta de nuevo utilizando otros términos:</h2>
+        <%= form_tag(strategies_path, :method => "get", id: "search-form") do %>
+            <div class="input-group" style="margin-top: 9px" >
+                  <%= text_field_tag :keyword, params[:keyword], autofocus: true, placeholder: "escribe palabras relacionadas con lo que quieres aprender", class: "form-control"%>
+                  <span class="input-group-btn">
+                  <%= submit_tag("buscar", class: "btn btn-primary") %>
+                  </span>
+            </div>
+        <% end %>
+  </div>
+</div>

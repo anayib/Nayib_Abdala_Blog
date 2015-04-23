@@ -1,0 +1,58 @@
+<!-- crear un form con form_tag o html con los params que me pida el medio de pagos -->
+<head>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_pricing.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<h2>Accede al conocimiento resumido de quienes saben como crear y crecer negocios</h2>
+<hr>
+<h4>conoce las estrategias que necesitas para mantenerte competitivo y a la vanguardia</h4>
+<hr>
+  <div class="row" style="margin-top: 60px">
+    <div class="col-md-4 col-sm-12"></div>
+    <div class="col-md-4 col-sm-12 well well-sm">
+          <div class="pricing hover-effect">
+              <div class="pricing-head">
+                  <h3>Suscripción Pro</h3>
+                  <h4><i>$</i>93<i>.5</i> <span>por 12 meses</span></h4>
+              </div>
+              <ul class="pricing-content list-unstyled">
+                  <li><i class="glyphicon glyphicon-ok"></i> Acceso ilimitado a todas las estrategias Pro</li>
+                  <li><i class="glyphicon glyphicon-ok"></i>Acceso a nuevas estrategias cada semana<span></span></li>
+
+              </ul>
+              <div class="pricing-footer">
+                  <hr>
+                  <p>Elige el medio de pago que más te convenga</p>
+
+
+                    <%#= render  'payubutton'%>
+
+                      <%= link_to"Pagar en Línea",suscriptors_contactpayment_path, remote: true, class: "btn btn-success btn-lg btn-block", style: "color:white" %>
+
+
+                    <div>
+
+                      <%= link_to "quiero pagar por consignación Bancaria",landing_page_wire_explanation_path,id: "link_pago", style: "color:#2980b9"%>
+                    </div>
+                     <h6><%= link_to"ya tengo una cuenta, ingresar a mi cuenta", new_user_session_path, id: "link_pago",  style: "color:grey" %></h6>
+
+
+
+              </div>
+          </div>
+    </div>
+    <div class="col-md-4 col-sm-12"></div>
+  </div>
+

@@ -1,0 +1,79 @@
+<%= form_for(@strategy) do |f| %>
+<!-- se especifica la url:strategy_path para que
+  mande los parámetros al controlador strategy
+  pero que no tome la acción new sino que asocie
+  el envio con un post para que se de el create
+ -->
+  <% if @strategy.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@strategy.errors.count, "error") %> prohibited
+      this strategy from being saved:</h2>
+      <!-- el pluralize permite pluralizar el mensaje según el número de herrores que vienen en el array -->
+
+    <ul>
+     <!-- esto se podría hacer si sólo quiero mostrar un error a la vez, y los mando con un alert# <#% @strategy.errors.full_messages[0] %> -->
+
+    <% @strategy.errors.full_messages.each do |msg| %>
+
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+
+  <div class="panel panel-info" style="text-align:left">
+    <div class="panel-heading">
+      <div class="panel-title" >
+        <p>
+          <%= f.label :title %><br>
+          <%= f.text_field :title , style: "width: 100%"%>
+        </p>
+
+        <p>
+          <%= f.label :intro %><br>
+          <%= cktext_area :strategy, :intro%>
+        </p><hr>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class = "container" id="appendTip">
+        <h4><strong>Create as many tips as you need for this strategy</strong> </h4> <br>
+
+
+        <%= f.fields_for :tips, @strategy.tips do |tip| %>
+          <% render 'tip_fields', :t => tip %>
+        <% end %>
+        <%= link_to_add_fields "Add_tip", f, :tips %>
+        <%#= link_to_delete "delete", :controller => :tip, :action => :destroy%>
+
+      </div><hr>
+
+      <p>
+        <%= f.label :fecha %><br>
+        <%= f.datetime_select :date %>
+      </p><hr>
+
+      <p> Select the authors related to this strategy <br>
+      <%= f.collection_check_boxes(:author_ids, Author.all, :id, :name) %>
+      </p><hr>
+        <!-- con field_for se supone que se puede mostrar la colección de autores para la selección -->
+      <!-- :author_id es el campo en el que voy a guardar la información. Author.all es la colección que me voy a traer del modelo :id y :name sin los datos que voy a mostrar, el nombre de cada uno.  -->
+
+      <p> Select the cathegories related to this strategy <br>
+
+          <%= f.collection_check_boxes(:category_ids, Category.all, :id, :category_name, ) %>
+        </div>
+      </p><hr>
+
+      <div>
+        <%=f.label :select_content_type%> <br>
+        <%= f.select :servicetype, options_for_select(Strategy.servicetypes.keys) %>
+      </div><br><hr>
+      <p>
+        <%= f.submit 'save and publish', class: "btn btn-success"%><span> <%= link_to 'cancel', strategies_path, class: "btn btn-default" %></span>
+      </p>
+    </div>
+  </div>
+
+<% end %>

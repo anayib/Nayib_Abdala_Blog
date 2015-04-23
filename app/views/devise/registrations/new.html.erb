@@ -1,0 +1,56 @@
+
+
+
+<!-- Princing  -->
+
+<head>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_pricing.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<br>
+
+<div class="panel-heading" style="text-align:center">
+  <h3>Bienvenido al grupo de quienes se mantienen actualizados de forma rápida y práctica</h3>
+  <h5><strong>nuevas estrategias todas las semanas</strong> </h5>
+</div>
+
+<div class="row no-space-pricing pricing-zoom">
+    <div class="col-md-4 col-sm-6"></div>
+    <div class="col-md-4 col-sm-6">
+        <div class="pricing" >
+            <div class="pricing-head">
+                <h3 style="background-color:#46b8da">Vuélvete Miembro</h3>
+                <h4><i></i></h4>
+            </div>
+            <ul class="pricing-content list-unstyled">
+                <li><i class="glyphicon glyphicon-ok"></i> Acceso a la totalidad de estrategias gratuitas </li>
+                <li><i class="glyphicon glyphicon-ok"></i> Acceso a la totalidad de estrategias de sólo miembros</li>
+                <li><i class="glyphicon glyphicon-ok"></i> Acceso a una estrategia nueva gratis por semana</li>
+            </ul>
+            <div class="pricing-footer">
+                <p>Empiza a aprender ahora mismo llenando el siguiente formulario</p>
+                <%= render "member_registration" %>
+            </div>
+          <%= link_to "ya estoy suscrito, quiero ingresar a mi cuenta", new_session_path(resource_name), id:"link_pago"%> <br>
+          <%= link_to "soy una empresa/universidad, quiero contactarlos", landing_page_enterprise_path, id:"link_pago", style: "color:blue"%>
+        </div><br>
+    </div>
+    <div class="col-md-4 col-sm-6"></div>
+</div><!--/row-->
+        <!-- End Pricing "No Spacing" -->
+
+
+
+
+

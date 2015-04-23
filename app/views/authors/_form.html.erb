@@ -1,0 +1,46 @@
+<%= form_for @author, html: {multipart: true} do |f| %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+      <% @author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="panel panel-info" style="text-align:left">
+    <div class="panel-heading">
+      <div class="panel-body" >
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :bio %><br>
+          <%= f.cktext_area :bio %>
+        </div>
+
+        <div class="field">
+          <%= f.label :author_picture%><br>
+          <p>make sure you upload a 100x100 image</p>
+          <%= f.file_field :image %>
+        </div>
+        <div class="field">
+          <%= f.label :date %><br>
+          <%= f.date_select :date %>
+        </div>
+        <div class="actions">
+
+         <p><%= link_to 'back to authors', authors_path, class: "btn btn-default" %><span>
+          <%= f.submit 'save', class: "btn btn-success"%> </span>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+

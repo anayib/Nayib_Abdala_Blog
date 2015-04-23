@@ -1,0 +1,133 @@
+
+<div class="container col-xs-12 col-md-12" id="container-total">
+  <div class="container" id="containerPrimario" >
+    <div class="row" id="row1">
+      <div class=" col-md-2"></div>
+        <div class="col-xs-12   col-md-8 " >
+          <div class="colCentral" style="background: rgba(0,0,0,.85); border-radius: 18px;margin:auto;padding: 50px;">
+            <h1 style="font-size:30px;"><stong>La base de datos de las estrategias de negocio que aplican emprendedores y profesionales exitosos</strong></h1>
+             <hr>
+            <p style="font-size:15px; line-height: 30px">desarrolla las competencias prácticas de tus estudiantes,  profesores y asesores brindándoles acceso a las estrategias más efectivas que solucionan los retos de innovación y emprendimiento de mayor relevancia de la actualidad</p>
+            <div>
+
+
+              <%= form_tag(strategies_path, :method => "get", id: "search-form") do %>
+              <div class="input-group">
+                    <%= text_field_tag :keyword, params[:keyword], autofocus: true, placeholder: "escribe palabras relacionadas con lo que quieres aprender", class: "form-control"%>
+                    <span class="input-group-btn">
+                    <%= submit_tag("buscar", class: "btn btn-primary") %>
+                    </span>
+              </div>
+              <% end %>
+            </div>
+          </div> <!--termina div colcentral -->
+        </div> <!-- div col8 finaliza -->
+        <div class="col-md-2"></div>
+      </div>
+    </div><!--termina el row1-->
+  </div><!--termina container primario-->
+</div><br><br>
+
+<div class="container col-xs-12 col-md-12">
+
+<%= render "strategies_landing_show" %>
+
+</div>
+
+<div id="ourApproach" style="background-color:#F7F7F7" class="col-xs-12 col-md-12">
+  <div class="container" id="secondContainer" >
+      <div class="row" style="padding: 20px">
+        <h3>en la base de datos encontrarás estrategias prácticas para</h3><hr>
+          <div class="col-sm-6 embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/qegz74-0vzY" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class=row id="contentdescription">
+              <div class="col-sm-6">
+                <ul>
+                  <h5><span class="icon-include"></span>Identificar oportunidades de innovación</h5  >
+                  <h5><span class="icon-include"></span>Generar y validar modelos de negocio</h5>
+                  <h5><span class="icon-include"></span>Implementar investigaciones de usuario</h5>
+                  <h5><span class="icon-include"></span>Integrar metodologías ágiles de desarrollo de producto y de mercado</h5>
+                  <h5><span class="icon-include"></span>Aumentar las ventas y hacer crecer tu negocio</h5>
+                  <h5><span class="icon-include"></span>Validar y desarrollar nuevos negocios</h5>
+                  <h5><span class="icon-include"></span>Resolver problemas de negocio a través de herrmaientas de innovación </h5>
+                  <h5><span class="icon-include"></span>Perfilar clientes para el desarrollo de nuevos negocios y optimizar los existentes</h5>
+                  <h5><span class="icon-include"></span>Crear y validar propuestas de valor que atienden necesidades reales </h5>
+                  <h5><span class="icon-include"></span>Implementar estrategias de mercadeo efectivas para adquirir, retener y crecer clientes</h5>
+                </ul>
+              </div>
+          </div><!--contentdescription 1-->
+      </div>
+  </div>
+</div>
+<!-- </div> <! --> <!-- finaliza container video -->
+
+
+
+
+<div class="col-xs-12  col-md-12 ">
+  <div class="#" id="#">
+    <div class="container-fluid" id="#">
+      <div class=row>
+        <div class="col-xs-12" style="text-align:center" >
+           <h3>Desarrolla las competencias de tus estudiantes, profesores y asesores</h3> <br>
+           <p>brindándoles el conocimeinto práctico, especializado y actual que los profesionales y emprendedores más competentes en negocios usan para atender las necesidades de la industria</p>
+        </div>
+      </div><!--finaliza row1-->
+  <!--inicia ultimo container para signup o signin -->
+    </div>
+    <div class="callToAction">
+        <div class="container">
+         <div class="row">
+          <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <%= link_to"programar una llamada", landing_page_contact_path, remote: true, class: "btn btn-success btn-lg", style: "color:white; margin-top: 30px; margin-bottom: 30px;" %>
+            </div>
+          </div>
+           <div class="col-sm-2"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12  col-md-12 ">
+  <footer style=  "margin-top:40px">
+        <div class="container">
+          <div class="row" >
+            <div class="col-xs-12 col-md-6">
+            <%= link_to "política de privacidad y términos de servicio", landing_page_privacyandterms_path, style: "color:#bdc3c7", id: "link_pago"  %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <p><small style="color:#bdc3c7">Copyright &copy; 2015 Innovation Lessons</small> </p>
+            </div>
+            <!-- <div class="col-sm-6 col-md-4">
+                <p><a href="#">Twitter</a><span>
+                <a href="#">LinkedIn</a>
+            </div><!end col-sm-3 -->
+          </div> <!-- end row -->
+  </footer>
+</div>
+
+
+<!--
+<h2>Los profesores</h2>
+<h3>Utilizan la base de datos para:</h3>
+<p>actualizar las fuentes de consulta de sus cursos</p>
+<p>mantenerce actualizados y a la vanguardia respecto a negocios, emprendimiento e innovación</p>
+<p>consultar las estrategias que se están implementando en la actualidad para brindar a los estudiantes conocimiento práctico enfocado en el desarrollo de competencias</p>
+
+<h2>Los estudiantes</h2>
+<h3>Utilizan la base de datos para:</h3>
+<p>tomar decisiones en la búsqueda de soluciones a retos académicos presentes en carreras relacionadas con el mundo de los negocios, la innovación y el emprendimiento</p>
+<p>Tomar decisiones relacionadas con su emprendimiento o trabajo de grado actual</p>
+<p>mantenerce actualizados y a la vanguardia respecto a negocios, emprendimiento e innovación</p>
+<p>desarrollar competencias prácticas para la toma decisiones en el campo empresarial</p>
+
+<h2>La Universidad</h2>
+<h3>Utilizan la base de datos para:</h3>
+<p>brindar acceso a toda su comunidad a la fuente de información actualizada, práctica y de acceso ubicuo más efectiva para la toma de decisiones de emprendimeinto e innovación</p>
+<p>garantizar a los  futuros estudiantes una herramienta basada en las necesidades y realidades de la industria, demostrando que la Institución se encuentra a la vanguardia y no está aislada de la realidad empresarial</p>
+<p>contar con argumentos tangibles en procesos de acreditación, que les permiten demostrar el uso de herrmaientas de tecnología que apoyan un currículo innovador</p>
+-->
+
+

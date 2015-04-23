@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container" style="margin-bottom:30px">
+  <div >
+  <% if user_signed_in? && current_user.admin?%>
+    <%= link_to 'edit', edit_strategy_path(@strategy),style:"float:right",class: "btn btn-info" %>
+    <%= link_to 'back to all strategies', strategies_path,style:"float:right",class: "btn btn-default" %>
+  <% end %>
+  </div>
+</div>
+
+<div class="container" style="line-height:1.8;"> <!--inicia contenido show -->
+  <div class="row">
+    <div class="col-md-7" style = "text-align:left" >
+          <h2> <strong> <%= @strategy.title %> </strong> </h2>
+          <h6>fecha de publicación |<%= @strategy.date%> <h6><!--fecha <-->
+          <% if @strategy.servicetype === "Gratuita" %>
+              <h6 style="color: #7f8c8d"><%=@strategy.servicetype%></h6>
+            <% elsif @strategy.servicetype === "Miembros" %>
+              <h6 style="color: #2980b9"><%=@strategy.servicetype%></h6>
+            <% elsif @strategy.servicetype === "SuscriptoresPro" %>
+              <h6 style="color:green"><%=@strategy.servicetype%></h6>
+          <% end %> <br>
+
+          <div div class="line-height-custom" >
+
+            <%= @strategy.intro.html_safe %><!--contenido -->
+          </div>
+          <hr>
+           <script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: es_ES
+          </script>
+          <script type="IN/Share" ></script>
+          <%= link_to "", "http://twitter.com/home?", class: "twitter-share-button", data: {url:"http://www.innovationlessons.com/strategies/#{@strategy.id}", text: "Revisen esta estrategia de @InnoLessons, está buenísima", lang: "es", count: "none"}  %>
+          <!-- script tweet-->
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <hr>
+
+
+          <% @strategy.tips.order("created_at asc").each do |tip| %>
+          <h3> <strong> <%= tip.tip_title %> </strong> </h3> <br>
+          <div class="line-height-custom"> <%= tip.content.html_safe %></div>
+          <hr>
+        <% end -%>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4" style="text-align:right" >
+
+        <% @strategy.authors.each do |author| %>
+          <h4>vía - <%= author.name %> - </h4><hr>
+          <%= image_tag author.image.url(:thumb), size: "100x100", style: "border-radius: 50%" %>
+          <p><small><em><%= author.bio.html_safe %></em></small></p>
+        <% end -%>
+    </div>
+  </div>
+</div> <!--termina contenido show -->
+
+<div class="container" style="line-height:1.8; margin-bottom: 60px;">
+    <div class="row">
+        <div class="col-md-12 btn-bottom">
+            <h4>quieres seguir aprendiendo?</h4>
+            <%#= link_to 'siguiente estrategia', #"ruta por id",class: "btn btn-default" %>
+
+              <%= link_to 'leer más estrategias', strategies_path, class: "btn btn-default"%>
+
+              <%=link_to 'acceder a estrategias pro', suscriptors_new_path, class: "btn btn-info"%>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+

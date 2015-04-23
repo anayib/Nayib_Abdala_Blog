@@ -1,0 +1,3 @@
+<%= f.fields_for :tips, @strategy.tips do |tip| %>
+    <% render 'tipfields', :t => tip %>
+<% end %>

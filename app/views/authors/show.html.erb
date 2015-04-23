@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @author.image.url(:thumb), size: "100x100", style: "border-radius: 50%" %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @author.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @author.bio.html_safe %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @author.date %>
+</p>
+
+<%= link_to 'Edit', edit_author_path(@author),class: "btn btn-info" %> |
+<%= link_to 'Back', authors_path,class: "btn btn-default" %>
+
